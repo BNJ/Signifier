@@ -1,0 +1,133 @@
+<!DOCTYPE html >
+<html ng-app="Signifier">
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+	<script type="text/javascript" src="controllers.js"></script>
+	<style type="text/css">
+		@import url(http://fonts.googleapis.com/css?family=Maven+Pro);
+		@import url(http://fonts.googleapis.com/css?family=Raleway);
+		body
+		{
+			font-family: sans-serif;
+			padding: 20px;
+			background-color: gray;
+			background-image: url('circles_tile.png');
+		}
+		h1
+		{
+			font-family: "Maven Pro", "Arial Black", "Arial", sans-serif;
+			font-weight: normal;
+			margin-top: 0px;
+		}
+		p.instructions
+		{
+			font-family: "Raleway", "Arial", sans-serif;
+		}
+		div.input
+		{
+			border: 1px solid gray;
+			border-radius: 2px;
+			color: gray;
+			margin: 4px 10px;
+			padding: 0px;
+			width: 350px;
+			font-size: 12px;
+			font-family: "Arial", sans-serif;
+		}
+		div.input input
+		{
+			border: none;
+			font-size: 12px;
+			font-family: "Arial", sans-serif;
+			margin: 0px;
+			padding: 4px;
+			overflow: hidden;
+			width: 342px;
+			max-width: 100%;
+		}
+		div.input label.left
+		{
+			padding-left: 4px;
+		}
+		div.input label.right
+		{
+			padding-right: 4px;
+		}
+		div.signature
+		{
+			margin-top: 72px;
+		}
+		.container
+		{
+			display: table;
+			width: 970px;
+			margin: 20px auto;
+			background-color: white;
+			padding: 20px 30px 30px 30px;
+			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+			border-radius: 2px;
+		}
+		.row
+		{
+			display: table-row;
+		}
+		.column
+		{
+			display: table-cell;
+			width: 450px;
+		}
+		hr
+		{
+			border: none;
+			border-top: 1px solid gray;
+			width: 100%;
+		}
+		.footer
+		{
+			font-family: "Raleway", "Arial", sans-serif;
+			font-size: 10px;
+			color: gray;
+		}
+	</style>
+    </head>
+    <body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" ng-controller="FormControl as form">
+	<div class="container">
+	<h1>Signifier</h1>
+	<div class="row">
+	<div class="column">
+	<p class="instructions">1) Fill out the fields below.</p>
+	<div class="input">
+	<input ng-model="name" placeholder="Full Name">
+	</div>
+	<div class="input">
+	<input ng-model="title" placeholder="Job Title">
+	</div>
+	<div class="input">
+	<label class="left" for="otel" style="width: 45px;">503 382 </label><input style="width: 290px;" id="otel" ng-model="otel" type="tel" placeholder="Office Phone Number">
+	</div>
+	<div class="input">
+	<input ng-model="mtel" type="tel" placeholder="Mobile Phone Number (optional)">
+	</div>
+	<div class="input">
+	<input ng-model="email" type="text" placeholder="Email Address" style="width: 283px;" id="email"><label for="email" class="right" style="width: 55px;">@bnj.com</label>
+	</div>
+	<div class="input">
+	<label class="left" for="twitter" style="width:12px;">@</label><input id="twitter" style="width: 326px;" ng-model="twitter" type="text" placeholder="Twitter Handle (optional)">
+	</div>
+	<div class="input">
+		<input ng-model="blog" placeholder="Blog URL (optional)" type="url">
+	</div>
+	<div class="input">
+	<label class="left" for="linkedin" style="150px;">https://www.linkedin.com/in/</label><input id="linkedin" style="width: 188px;" ng-model="linkedin" type="text" placeholder="LinkedIn Profile Page">
+	</div>
+	</div>
+	<div class="column">
+	<p class="instructions">2) Copy the formatted snippet below.</p>
+        <div class="signature"><p style="margin: 0px; line-height: normal; color: rgb(204, 28, 0);"><font face="Arial Black"><span style="font-size: 12px;"><b><span style="letter-spacing: 0px; color: rgb(0, 0, 0);">BABCOCK</span><span style="letter-spacing: 0px;">JENKINS</span></b></span></font></p><p style="margin: 0px; line-height: normal; color: rgb(102, 102, 102);"><span style="letter-spacing: 0px; font-size: 12px;"><font face="Arial">{{ name }} | {{ title }}</font></span></p><p style="margin: 0px; line-height: normal; color: rgb(102, 102, 102);"><font face="Arial"><span style="font-size: 12px;"><span style="letter-spacing: 0px;">o&nbsp;</span></span></font><a href="tel:+1503382{{ otel|formatTel }}" style="color: rgb(102, 102, 102);"><font face="Arial"><span style="font-size: 12px;">503 382 {{ otel }}</span></font></a><span ng-show="mtel"><font face="Arial"><span style="font-size: 12px;"><span style="letter-spacing: 0px;">&nbsp;|</span><span style="letter-spacing: 0px;">&nbsp;</span></span></font><font face="Arial"><span style="font-size: 12px;"><span style="letter-spacing: 0px;">m&nbsp;</span></span></font><a href="tel:+1{{ mtel|formatTel }}" style="color: rgb(102, 102, 102);"><font face="Arial"><span style="font-size: 12px;">{{ mtel }}</span></font></a></span><font face="Arial"><span style="font-size: 12px;"><span style="letter-spacing: 0px;">&nbsp;|</span><span style="letter-spacing: 0px;">&nbsp;</span></span></font><a href="mailto:{{ email }}@bnj.com" style="color: rgb(102, 102, 102);"><font face="Arial"><span style="font-size: 12px;">{{ email }}@bnj.com</span></font></a><span ng-show="twitter"><font face="Arial"><span style="font-size: 12px;"><span style="letter-spacing: 0px;">&nbsp;|</span><span style="letter-spacing: 0px;">&nbsp;</span></span></font><a href="http://twitter.com/{{ twitter }}" style="color: rgb(102, 102, 102);"><font face="Arial"><span style="font-size: 12px;">@{{ twitter }}</span></font></a></span><span ng-show="blog"><font face="Arial"><span style="font-size: 12px;"><span style="letter-spacing: 0px;">&nbsp;|</span><span style="letter-spacing: 0px;">&nbsp;</span></span></font><a href="{{ blog }}" style="color: rgb(102, 102, 102);"><font face="Arial"><span style="font-size: 12px;">Blog</span></font></a></span><font face="Arial"><span style="font-size: 12px;"><span style="letter-spacing: 0px;">&nbsp;|</span><span style="letter-spacing: 0px;">&nbsp;</span></span></font><a href="http://www.linkedin.com/in/{{ linkedin }}" style="color: rgb(102, 102, 102);"><font face="Arial"><span style="font-size: 12px;">LinkedIn</span></font></a></p></div>
+	</div>
+	</div>
+	</div>
+    </body>
+</html>
