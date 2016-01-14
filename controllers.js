@@ -1,25 +1,40 @@
-var Signifier = angular.module('Signifier', [])
+(function (signifier) {
+  'use strict';
 
-.filter('formatTel', function () {
-	return function( input ) {
-		input = input || '';
-		return input.replace(/[^0-9]+/g,'');
-	};
-})
-.filter('displayTel', function() {
-	return function(input) {
-		input = input || '';
-		input = input.replace(/[^0-9]+/g, '');
-		var out = input.slice(-4);
-		input = input.slice(0, -4);
-		while (input.length) {
-			var part = input.slice(-3);
-			input = input.slice(0, -3);
-			out = part + " " + out;
-		}
-		return out;
-	};
+  signifier.filter('formatTel', function () {
+    return function (input) {
+      input = input || '';
+      return input.replace(/[^0-9]+/g, '');
+    };
+  });
 
-})
-.controller('FormControl', function($scope) {
-});
+  signifier.filter('displayTel', function () {
+    return function (input) {
+      input = input || '';
+      input = input.replace(/[^0-9]+/g, '');
+      var out = [input.slice(-4)];
+      input = input.slice(0, -4);
+
+      while (input.length) {
+        out.unshift(input.slice(-3));
+        input = input.slice(0, -3);
+      }
+
+      return '+' + out.join('.');
+      //return '(' + out.shift() + ')' + out.join('.');
+    };
+
+  });
+
+  signifier.controller('FormControl', function ($scope) {
+    $scope.name = 'Mike Boogaard';
+    $scope.title = 'managing director, uk + emea';
+    $scope.email = 'mikeb';
+    $scope.mtel = '07506559507';
+    $scope.otel = '02074276083';
+    $scope.twitter = 'mikeboogaard';
+    $scope.linkedin = 'mikeboogaard';
+
+  });
+
+})(angular.module('Signifier', []));

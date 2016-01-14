@@ -1,0 +1,173 @@
+%!Adobe-FontList 1.16
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:BellGothicBT-Black
+FamilyName:Bell Gothic BT
+StyleName:Black
+MenuName:Bell Gothic BT Black
+StyleBits:2
+WeightClass:900
+WidthClass:5
+AngleClass:0
+FullName:Bell Gothic BT Black
+WritingScript:Roman
+OutlineFileName:\BellGotBTBla
+DataFormat:POSTResource
+UsesStandardEncoding:yes
+isCFF:no
+FileLength:32605
+FileModTime:941040278
+DesignSize:-1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:BellGothicBT-Roman
+FamilyName:Bell Gothic BT
+StyleName:Roman
+MenuName:Bell Gothic
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Bell Gothic
+WritingScript:Roman
+OutlineFileName:\BellGotBTRom
+DataFormat:POSTResource
+UsesStandardEncoding:yes
+isCFF:no
+FileLength:31311
+FileModTime:941040278
+DesignSize:-1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:BellGothicBT-Black
+OutlineFileName:\BellGothicBT-Black
+ResourceID:15617
+MacStyle:0
+FileLength:6310
+FileModTime:1443647038
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:BellGothicBT-Roman
+OutlineFileName:\BellGothicBT-Roman
+ResourceID:15419
+MacStyle:0
+FileLength:7610
+FileModTime:1443647038
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Georgia-Italic
+FamilyName:Georgia
+StyleName:Italic
+MenuName:Georgia
+StyleBits:1
+WeightClass:400
+WidthClass:5
+AngleClass:1
+FullName:Georgia Italic
+WritingScript:Roman
+OutlineFileName:\Georgia Italic.ttf
+DataFormat:sfntData
+FileLength:400624
+FileModTime:1440788755
+NameArray:0,Mac,4,Georgia Italic
+NameArray:0,Win,1,Georgia
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Tahoma
+FamilyName:Tahoma
+StyleName:Regular
+MenuName:Tahoma
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Tahoma
+WritingScript:Roman
+OutlineFileName:\Tahoma.ttf
+DataFormat:sfntData
+FileLength:681120
+FileModTime:1440788755
+NameArray:0,Win,1,Tahoma
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:TrebuchetMS
+FamilyName:Trebuchet MS
+StyleName:Regular
+MenuName:Trebuchet MS
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Trebuchet MS
+WritingScript:Roman
+OutlineFileName:\Trebuchet MS.ttf
+DataFormat:sfntData
+FileLength:138848
+FileModTime:1440788755
+NameArray:0,Mac,4,Trebuchet MS
+NameArray:0,Win,1,Trebuchet MS
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Verdana-Bold
+FamilyName:Verdana
+StyleName:Bold
+MenuName:Verdana
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Verdana Bold
+WritingScript:Roman
+OutlineFileName:\Verdana Bold.ttf
+DataFormat:sfntData
+FileLength:156340
+FileModTime:1412294400
+NameArray:0,Mac,4,Verdana Bold
+NameArray:0,Win,1,Verdana
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Verdana
+FamilyName:Verdana
+StyleName:Regular
+MenuName:Verdana
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Verdana
+WritingScript:Roman
+OutlineFileName:\Verdana.ttf
+DataFormat:sfntData
+FileLength:189144
+FileModTime:1412294400
+NameArray:0,Mac,4,Verdana
+NameArray:0,Win,1,Verdana
+%EndFont
+
