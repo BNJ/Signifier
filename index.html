@@ -15,7 +15,11 @@
       height: 100%;
       padding: 0px;
       margin: 0px;
-      overflow: hidden;
+    }
+
+    body {
+      background-image: url('_bnj_building_0_BW.jpg');
+      background-size: cover;
     }
 
     div.body {
@@ -24,21 +28,6 @@
       width: 100%;
       padding-top: 80px;
       margin: 0px;
-    }
-
-    div.body::after {
-
-      content: "";
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      z-index: -1;
-      background-image: url('_bnj_building_0_BW.jpg');
-      background-position: 50% 0%;
-      opacity: 0.35;
-      min-height: 500px;
     }
 
     h1 {
@@ -162,18 +151,9 @@
                    type="text"
                    placeholder="LinkedIn Profile Page">
           </div>
-
-          <div class="input">
-            <label class="left" for="twitter" style="width:12px;">@</label>
-            <input id="twitter"
-                   style="width: 326px;"
-                   ng-model="twitter"
-                   type="text"
-                   placeholder="Twitter Handle (optional)">
-          </div>
         </div>
         <div class="column">
-          <p class="instructions">2) Copy the formatted snippet below.</p>
+          <p class="instructions">2) Copy <strong>one</strong> of the formatted snippets below.</p>
           <div class="signature" style="font-size:10pt;">
 
             <img src="https://d2j26rh8c4n2db.cloudfront.net/email/sig/logo_stack.png" height="78" style="padding-bottom: 10px;"/>
@@ -213,32 +193,77 @@
               </span>
             </p>
 
-            <p style="margin: 0; line-height: normal; color: rgb(102, 102, 102);" ng-if="linkedin || twitter">
+            <p style="margin: 0; line-height: normal; color: rgb(102, 102, 102);" ng-if="linkedin">
               <a ng-if="linkedin"
-                 href="//www.linkedin.com/in/{{ linkedin }}"
+                 href="https://www.linkedin.com/in/{{ linkedin }}"
                  style="color: rgb(84, 87, 92); font-size: 10pt; font-family: Verdana, sans-serif; text-decoration: none;">
                 <img src="https://d2j26rh8c4n2db.cloudfront.net/email/sig/icon_linkedin_40.png"
                      height="11"
                      width="11"
                      style="vertical-align: middle;"
+                     align="normal"
                 /><span style="font-size: 8pt; margin-left: 1pt;">/</span>{{ linkedin }}
-              </a>
-
-              <a ng-if="twitter"
-                 href="//twitter.com/{{ twitter }}"
-                 style="color: rgb(84, 87, 92); font-size: 10pt; font-family: Verdana, sans-serif; text-decoration: none;"
-                 ng-style="{'margin-left': !!linkedin ? '8pt' : 0}"
-              >
-                <img src="https://d2j26rh8c4n2db.cloudfront.net/email/sig/icon_twitter_40.png"
-                     height="11"
-                     width="11"
-                     style="vertical-align: middle;"
-                /><span style="font-size: 8pt; margin-left: 1pt;">@</span>{{ twitter }}
               </a>
             </p>
 
             <p style="margin-top: 10pt;">
-              <a href="//www.bnj.com"
+              <a href="https://www.bnj.com"
+                 style="color: rgb(255, 203, 31); text-decoration: none; font-weight: bold; font-size: 10pt; font-family: Verdana, sans-serif;">
+                bnj.com
+              </a>
+            </p>
+          </div>
+
+          <div class="signature" style="font-size:10pt;">
+
+            <p style="margin: 0 0 1em; line-height: 1; color: rgb(84, 87, 92); font-size: 12pt; font-family: Verdana,sans-serif;">
+              BABCOCK<br />JENKINS
+            </p>
+
+            <p style="margin: 0; line-height: 1.4; color: rgb(84, 87, 92); font-size: 11pt; font-family: Verdana,sans-serif;">
+              {{ name }}
+            </p>
+
+            <p style="margin: 0 0 10pt; color: rgb(84, 87, 92);font-size: 10pt; font-style: italic; font-family: Georgia, serif;">
+              {{ title }}
+            </p>
+
+            <p style="margin: 0;" ng-if="email">
+              <a href="mailto:{{ email }}@bnj.com"
+                 style=" color: rgb(84, 87, 92); text-decoration: none; font-size: 10pt; font-family: Verdana, sans-serif;">
+                {{ email }}@bnj.com
+              </a>
+            </p>
+
+            <p style="margin: 0;" ng-if="!!mtel.length">
+              <a href="tel:+{{ mtel|formatTel }}"
+                 style="color: rgb(84, 87, 92); text-decoration: none; font-size: 10pt; font-family: Verdana, sans-serif;">
+                {{ mtel|displayTel }}
+              </a>
+              <span style="color: rgb(84, 87, 92); font-size: 10pt; font-style: italic; font-family: Georgia, serif;">
+                &nbsp;m
+              </span>
+            </p>
+
+            <p style="margin: 0;" ng-if="!!otel.length">
+              <a href="tel:+{{ otel|formatTel }}"
+                 style="color: rgb(84, 87, 92); text-decoration: none; font-size: 10pt; font-family: Verdana, sans-serif;">
+                {{ otel|displayTel }}
+              </a>
+              <span style="color: rgb(84, 87, 92); font-size: 10pt; font-style: italic; font-family: Georgia, serif;">
+                &nbsp;o
+              </span>
+            </p>
+
+            <p style="margin: 0; line-height: normal; color: rgb(102, 102, 102);" ng-if="linkedin">
+              <a ng-if="linkedin"
+                 href="https://www.linkedin.com/in/{{ linkedin }}"
+                 style="color: rgb(84, 87, 92); font-size: 10pt; font-family: Verdana, sans-serif; text-decoration: none;">
+              <span style="color: rgb(84, 87, 92); font-size: 10pt; font-style: italic; font-family: Georgia, serif;">&nbsp;linkedin/</span>{{ linkedin }}</a>
+            </p>
+
+            <p style="margin-top: 10pt;">
+              <a href="https://www.bnj.com"
                  style="color: rgb(255, 203, 31); text-decoration: none; font-weight: bold; font-size: 10pt; font-family: Verdana, sans-serif;">
                 bnj.com
               </a>
