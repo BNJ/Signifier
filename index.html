@@ -151,12 +151,24 @@
                    type="text"
                    placeholder="LinkedIn Profile Page">
           </div>
+          <div class="input">
+            <select ng-model="signatureType"
+                    ng-options="option for option in signatureTypeOptions"></select>
+          </div>
         </div>
+
         <div class="column">
           <p class="instructions">2) Copy <strong>one</strong> of the formatted snippets below.</p>
           <div class="signature" style="font-size:10pt;">
 
-            <img src="https://d2j26rh8c4n2db.cloudfront.net/email/sig/logo_stack.png" height="78" style="padding-bottom: 10px;"/>
+            <img ng-if="'image' === signatureType"
+                 src="https://d2j26rh8c4n2db.cloudfront.net/email/sig/logo_stack.png"
+                 height="78" style="padding-bottom: 10px;"/>
+
+            <p ng-if="'text' === signatureType"
+               style="margin: 0 0 1em; line-height: 1; color: rgb(84, 87, 92); font-size: 12pt; font-family: Verdana,sans-serif;">
+              BABCOCK<br />JENKINS
+            </p>
 
             <p style="margin: 0; line-height: 1.4; color: rgb(84, 87, 92); font-size: 11pt; font-family: Verdana,sans-serif;">
               {{ name }}
@@ -193,7 +205,8 @@
               </span>
             </p>
 
-            <p style="margin: 0; line-height: normal; color: rgb(102, 102, 102);" ng-if="linkedin">
+            <p style="margin: 0; line-height: normal; color: rgb(102, 102, 102);"
+               ng-if="linkedin  && 'image' === signatureType">
               <a ng-if="linkedin"
                  href="https://www.linkedin.com/in/{{ linkedin | lowercase }}"
                  style="color: rgb(84, 87, 92); font-size: 10pt; font-family: Verdana, sans-serif; text-decoration: none;">
@@ -206,60 +219,12 @@
               </a>
             </p>
 
-            <p style="margin-top: 10pt;">
-              <a href="https://www.bnj.com"
-                 style="color: rgb(255, 203, 31); text-decoration: none; font-weight: bold; font-size: 10pt; font-family: Verdana, sans-serif;">
-                bnj.com
-              </a>
-            </p>
-          </div>
-
-          <div class="signature" style="font-size:10pt;">
-
-            <p style="margin: 0 0 1em; line-height: 1; color: rgb(84, 87, 92); font-size: 12pt; font-family: Verdana,sans-serif;">
-              BABCOCK<br />JENKINS
-            </p>
-
-            <p style="margin: 0; line-height: 1.4; color: rgb(84, 87, 92); font-size: 11pt; font-family: Verdana,sans-serif;">
-              {{ name }}
-            </p>
-
-            <p style="margin: 0 0 10pt; color: rgb(84, 87, 92);font-size: 10pt; font-style: italic; font-family: Georgia, serif;">
-              {{ title | lowercase }}
-            </p>
-
-            <p style="margin: 0;" ng-if="email">
-              <a href="mailto:{{ email | lowercase }}@bnj.com"
-                 style=" color: rgb(84, 87, 92); text-decoration: none; font-size: 10pt; font-family: Verdana, sans-serif;">
-                {{ email | lowercase }}@bnj.com
-              </a>
-            </p>
-
-            <p style="margin: 0;" ng-if="!!mtel.length">
-              <a href="tel:+{{ mtel | formatTel }}"
-                 style="color: rgb(84, 87, 92); text-decoration: none; font-size: 10pt; font-family: Verdana, sans-serif;">
-                {{ mtel | displayTel }}
-              </a>
-              <span style="color: rgb(84, 87, 92); font-size: 10pt; font-style: italic; font-family: Georgia, serif;">
-                &nbsp;m
-              </span>
-            </p>
-
-            <p style="margin: 0;" ng-if="!!otel.length">
-              <a href="tel:+{{ otel | formatTel }}"
-                 style="color: rgb(84, 87, 92); text-decoration: none; font-size: 10pt; font-family: Verdana, sans-serif;">
-                {{ otel | displayTel }}
-              </a>
-              <span style="color: rgb(84, 87, 92); font-size: 10pt; font-style: italic; font-family: Georgia, serif;">
-                &nbsp;o
-              </span>
-            </p>
-
-            <p style="margin: 0; line-height: normal; color: rgb(102, 102, 102);" ng-if="linkedin">
+            <p style="margin: 0; line-height: normal; color: rgb(102, 102, 102);"
+               ng-if="linkedin && 'text' === signatureType">
               <a ng-if="linkedin"
                  href="https://www.linkedin.com/in/{{ linkedin | lowercase }}"
                  style="color: rgb(84, 87, 92); font-size: 10pt; font-family: Verdana, sans-serif; text-decoration: none;">
-              <span style="color: rgb(84, 87, 92); font-size: 10pt; font-style: italic; font-family: Georgia, serif;">&nbsp;linkedin/</span>{{ linkedin }}</a>
+                <span style="color: rgb(84, 87, 92); font-size: 10pt; font-style: italic; font-family: Georgia, serif;">&nbsp;linkedin/</span>{{ linkedin }}</a>
             </p>
 
             <p style="margin-top: 10pt;">
@@ -269,6 +234,7 @@
               </a>
             </p>
           </div>
+
         </div>
       </div>
     </div>
