@@ -17,6 +17,10 @@
       margin: 0px;
     }
 
+    ::selection {
+      background: rgba(255, 203, 31, .3);
+    }
+
     body {
       background-image: url('_bnj_building_0_BW.jpg');
       background-size: cover;
@@ -71,7 +75,8 @@
     }
 
     div.signature {
-      margin-top: 72px;
+      border: 1px solid gray;
+      padding: 20px;
     }
 
     .container {
@@ -151,15 +156,20 @@
                    type="text"
                    placeholder="LinkedIn Profile Page">
           </div>
-          <div class="input">
+
+          <p class="instructions">2) Select a signature type.</p>
+          <div>
             <select ng-model="signatureType"
                     ng-options="option for option in signatureTypeOptions"></select>
           </div>
         </div>
 
         <div class="column">
-          <p class="instructions">2) Copy <strong>one</strong> of the formatted snippets below.</p>
-          <div class="signature" style="font-size:10pt;">
+          <p class="instructions">3) Copy the formatted snippet below.</p>
+          <p class="instructions"><small><em>
+            Click anywhere in the box below to select the signature.
+          </em></small></p>
+          <div id="signature" class="signature" style="font-size:10pt;" onclick="selectText('signature')">
 
             <img ng-if="'image' === signatureType"
                  src="https://d2j26rh8c4n2db.cloudfront.net/email/sig/logo_stack.png"
@@ -239,5 +249,20 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+    function selectText(containerId) {
+      var range;
+
+      if (document.selection) {
+        range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(containerId));
+        range.select();
+      } else if (window.getSelection) {
+        range = document.createRange();
+        range.selectNode(document.getElementById(containerId));
+        window.getSelection().addRange(range);
+      }
+    }
+  </script>
 </body>
 </html>
