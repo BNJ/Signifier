@@ -29,13 +29,13 @@
     $scope.signatureTypeOptions = ['text', 'image'];
     $scope.signatureType = 'image';
 
-     $scope.name = 'Mike Boogaard';
-     $scope.title = 'managing director, uk + emea';
-     $scope.email = 'mikeb';
-     $scope.mtel = '07506559507';
-     $scope.otel = '02074276083';
-     $scope.twitter = 'mikeboogaard';
-     $scope.linkedin = 'mikeboogaard';
+     // $scope.name = 'Mike Boogaard';
+     // $scope.title = 'managing director, uk + emea';
+     // $scope.email = 'mikeb';
+     // $scope.mtel = '07506559507';
+     // $scope.otel = '02074276083';
+     // $scope.twitter = 'mikeboogaard';
+     // $scope.linkedin = 'mikeboogaard';
   });
 
 })(angular.module('Signifier', []));
