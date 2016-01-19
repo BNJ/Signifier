@@ -198,7 +198,7 @@
             </p>
 
             <p style="margin: 0;" ng-if="!!mtel.length">
-              <a href="tel:+{{ mtel | formatTel }}"
+              <a href="tel:{{ mtel | formatTel }}"
                  style="color: rgb(84, 87, 92); text-decoration: none; font-size: 10pt; font-family: Verdana, sans-serif;">
                 {{ mtel | displayTel }}
               </a>
@@ -208,7 +208,7 @@
             </p>
 
             <p style="margin: 0;" ng-if="!!otel.length">
-              <a href="tel:+{{ otel | formatTel }}"
+              <a href="tel:{{ otel | formatTel }}"
                  style="color: rgb(84, 87, 92); text-decoration: none; font-size: 10pt; font-family: Verdana, sans-serif;">
                 {{ otel | displayTel }}
               </a>
